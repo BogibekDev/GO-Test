@@ -1,9 +1,9 @@
 import '../model/question.dart';
 
 class Constants {
-  static const String title = 'Let’s play it!';
+  static const String title = "GO Test";
   static const String description =
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been';
+      "Kurslarimizdan qaysi biri sizga mos kelishini aniqlash uchun qisqa testdan o'ting. Aniq natijaga erishish uchun savollarga tez-tez, ikkilanmasdan to'g'ri javob bering.";
   static const String name = 'Enter your name';
   static const categories = {
     1: "Frontend",

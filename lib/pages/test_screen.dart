@@ -44,7 +44,7 @@ class _TestScreenState extends State<TestScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: ResColors.mainColor2,
+      backgroundColor: ResColors.white,
       appBar: AppBar(
         leading: InkWell(
           onTap: () {
@@ -55,11 +55,8 @@ class _TestScreenState extends State<TestScreen> {
             color: ResColors.white,
           ),
         ),
-        backgroundColor: ResColors.mainColor2,
-        title: Image(
-          height: 19.h,
-          image: const AssetImage(Assets.icLogo3),
-        ),
+        backgroundColor: ResColors.mainColor,
+        title: const Text('Test',style: TextStyle(color: ResColors.white),),
         centerTitle: true,
       ),
       body: Container(

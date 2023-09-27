@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_test/pages/lets_play_screen.dart';
+import 'package:go_test/utils/res_colors.dart';
 
 import '../utils/assets.dart';
-import 'onboarding_screen.dart';
-
 
 class SplashScreen extends StatefulWidget {
   static const String id = "/splashScreen";
@@ -30,14 +30,17 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         width: MediaQuery.sizeOf(context).width,
         height: MediaQuery.sizeOf(context).height,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(Assets.splashBg),
-            fit: BoxFit.cover
-          ),
-        ),
+        decoration: const BoxDecoration(color: ResColors.mainColor
+            // image: DecorationImage(
+            //   image: AssetImage(Assets.splashBg),
+            //   fit: BoxFit.cover
+            // ),
+            ),
         child: Center(
-          child: SvgPicture.asset(Assets.icLogo),
+          child: Image(
+            width: 150.sp,
+            image: const AssetImage(Assets.icLogoGo),
+          ),
         ),
       ),
     );
@@ -45,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _runTimer() {
     Timer(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, OnBoardingScreen.id);
+      Navigator.pushReplacementNamed(context, LetsPlayScreen.id);
     });
   }
 }

@@ -1,4 +1,5 @@
 class Assets {
+  static const icLogoGo = 'assets/images/ic_logo_go.png';
   static const icLogo = 'assets/images/ic_logo.svg';
   static const icLogo2 = 'assets/images/ic_logo2.png';
   static const icLogo3 = 'assets/images/ic_logo3.png';

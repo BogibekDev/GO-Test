@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,6 +17,13 @@ class ItemResult extends StatefulWidget {
 }
 
 class _ItemResultState extends State<ItemResult> {
+ int a=0;
+ @override
+  void initState() {
+    a=Random().nextInt(10);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +32,7 @@ class _ItemResultState extends State<ItemResult> {
       width: MediaQuery.sizeOf(context).width,
       height: 100.sp,
       decoration: BoxDecoration(
-        color: ResColors.white,
+        color: ResColors.mainColor2,
         borderRadius: BorderRadius.circular(10.sp),
         border: Border.all(
           color: ResColors.white,
@@ -37,10 +46,10 @@ class _ItemResultState extends State<ItemResult> {
             spreadRadius: 0,
           )
         ],
-        image: DecorationImage(
-          image: AssetImage(widget._result.image),
-          fit: BoxFit.cover,
-        ),
+        // image: DecorationImage(
+        //   image: AssetImage(widget._result.image),
+        //   fit: BoxFit.cover,
+        // ),
       ),
       child: InkWell(
         onTap: widget.onTap,

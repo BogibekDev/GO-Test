@@ -6,7 +6,6 @@ import '../utils/consts.dart';
 import '../utils/res_colors.dart';
 import 'test_screen.dart';
 
-
 class LetsPlayScreen extends StatefulWidget {
   static const String id = "/letsPlayScreen";
 
@@ -17,24 +16,20 @@ class LetsPlayScreen extends StatefulWidget {
 }
 
 class _LetsPlayScreenState extends State<LetsPlayScreen> {
-  final TextEditingController _nameController = TextEditingController();
+  // final TextEditingController _nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(Assets.letsPlayBg), fit: BoxFit.cover),
-        ),
-        child: Column(
+      backgroundColor: ResColors.mainColor,
+      body: Column(
           children: [
-            const Expanded(
+            Expanded(
                 flex: 1,
                 child: Center(
                   child: Image(
-                    image: AssetImage(Assets.icLogo3),
+                    width: 150.sp,
+                    image: const AssetImage(Assets.icLogoGo),
                   ),
                 )),
             Expanded(
@@ -92,38 +87,38 @@ class _LetsPlayScreenState extends State<LetsPlayScreen> {
                               ),
                             ),
                             SizedBox(height: 12.h),
-                            Container(
-                              height: 50.h,
-                              width: MediaQuery.sizeOf(context).width,
-                              padding: EdgeInsets.only(left: 10.w, right: 10.w),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15.h),
-                                border: Border.all(
-                                  color: ResColors.mainColor,
-                                  width: 3.sp,
-                                ),
-                              ),
-                              child: Center(
-                                child: TextField(
-                                  // keyboardType: TextInputType.name,
-                                  controller: _nameController,
-                                  decoration: InputDecoration(
-                                    labelStyle: TextStyle(
-                                      color: ResColors.black,
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    border: InputBorder.none,
-                                    hintText: Constants.name,
-                                    hintStyle: TextStyle(
-                                      color: ResColors.grey,
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
+                            // Container(
+                            //   height: 50.h,
+                            //   width: MediaQuery.sizeOf(context).width,
+                            //   padding: EdgeInsets.only(left: 10.w, right: 10.w),
+                            //   decoration: BoxDecoration(
+                            //     borderRadius: BorderRadius.circular(15.h),
+                            //     border: Border.all(
+                            //       color: ResColors.mainColor,
+                            //       width: 3.sp,
+                            //     ),
+                            //   ),
+                            //   child: Center(
+                            //     child: TextField(
+                            //       // keyboardType: TextInputType.name,
+                            //       controller: _nameController,
+                            //       decoration: InputDecoration(
+                            //         labelStyle: TextStyle(
+                            //           color: ResColors.black,
+                            //           fontSize: 16.sp,
+                            //           fontWeight: FontWeight.w600,
+                            //         ),
+                            //         border: InputBorder.none,
+                            //         hintText: Constants.name,
+                            //         hintStyle: TextStyle(
+                            //           color: ResColors.grey,
+                            //           fontSize: 16.sp,
+                            //           fontWeight: FontWeight.w600,
+                            //         ),
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),
@@ -134,17 +129,12 @@ class _LetsPlayScreenState extends State<LetsPlayScreen> {
             ),
           ],
         ),
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => TestScreen(
-                name: _nameController.text.isEmpty
-                    ? "someone"
-                    : _nameController.text,
-              ),
+              builder: (context) => const TestScreen(name: "Natija"),
             ),
           );
         },

@@ -19,13 +19,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ResColors.white,
+      backgroundColor: ResColors.mainColor2,
       body: Column(
         children: [
-          const Expanded(
+           Expanded(
             child: Center(
-              child: Image(
-                image: AssetImage(Assets.icLogo2),
+              child: Container(
+                width: 150.sp,
+                child: Image(
+                  image: AssetImage(Assets.icLogoGo),
+                ),
               ),
             ),
           ),
@@ -52,7 +55,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   child: Container(
                     height: 60.h,
                     decoration: BoxDecoration(
-                      color: ResColors.mainColor,
+                      color: ResColors.mainColor2,
                       borderRadius: BorderRadius.circular(30.h),
                     ),
                     child: Center(
